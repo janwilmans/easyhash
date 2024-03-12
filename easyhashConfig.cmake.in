@@ -1,0 +1,13 @@
+set(EASYHASH_VERSION 1.0.0)
+
+@PACKAGE_INIT@
+
+set_and_check(EASYHASH_INCLUDE_DIR "@PACKAGE_INCLUDE_INSTALL_DIR@")
+
+add_library(easyhash_library INTERFACE)
+target_compile_features(easyhash_library INTERFACE cxx_std_20)
+target_include_directories(easyhash_library INTERFACE ${EASYHASH_INCLUDE_DIR})
+
+add_library(easyhash::easyhash ALIAS easyhash_library)
+
+check_required_components(easyhash)

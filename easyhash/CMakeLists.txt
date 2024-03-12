@@ -1,0 +1,5 @@
+add_library(easyhash_library INTERFACE)
+target_compile_features(easyhash_library INTERFACE cxx_std_20)
+target_include_directories(easyhash_library INTERFACE include)
+
+add_library(easyhash::easyhash ALIAS easyhash_library)
